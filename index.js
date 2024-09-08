@@ -9,8 +9,8 @@ config({
   });
 app.use(
     cors({
-      origin: [process.env.FRONTEND_URL],
-      methods: ["POST"],
+      origin: ["https://bookstore-yk.netlify.app"],
+      methods: ["GET","POST"],
       credentials: true,
     })
   );
