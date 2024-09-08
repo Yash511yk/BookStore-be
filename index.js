@@ -1,6 +1,12 @@
 const express = require('express')
 const app = express();
-const cors = require('cors')
+app.use(
+    cors({
+      origin: [process.env.FRONTEND_URL],
+      methods: ["POST"],
+      credentials: true,
+    })
+  );
 const port = process.env.PORT || 5000;
 
 // middlewear 
