@@ -1,5 +1,12 @@
-const express = require('express')
+// const express = require('express')
+import express from 'express'
 const app = express();
+import cors from 'cors'
+// const config = require('dotenv')
+import { config } from "dotenv";
+config({
+    path: "../.env",
+  });
 app.use(
     cors({
       origin: [process.env.FRONTEND_URL],
@@ -10,7 +17,7 @@ app.use(
 const port = process.env.PORT || 5000;
 
 // middlewear 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 
@@ -19,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 // mongodb confiq here
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+import { MongoClient, ServerApiVersion, ObjectId } from 'mongodb';
 const uri = "mongodb+srv://yashkhandelwal511:yash12102002@cluster0.2yvzuga.mongodb.net/Books";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
